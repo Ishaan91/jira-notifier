@@ -12,36 +12,35 @@ headers = {"Accept": "application/json"}
 
 # url = "https://automationanywhere.atlassian.net/rest/api/3/search?jql=fixVersion%20=%20'IQ%20Bot%2011.3.5.1'%20AND%20issuetype%20in%20(improvement,%20story,%20defect,%20task)%20AND%20('Release%20Notes%20Required'%20=%20Yes%20OR%20'Additional%20Needs'%20=%20'Release%20Note%20Needed')"
 
-list_of_recipients = [
-    "ishaan.agrawal",
-    "smita.biswas",
-    "aditi.gupta",
-    "aanubbhaa.jhhaa",
-    "vikram.bp"
-#     "aditi.kashikar"
-                    ]
-
-
 # list_of_recipients = [
-#     "aanubbhaa.jhhaa",
-#     "aditi.gupta",
-#     "aditi.kashikar",
-#     "arthur.hoang",
-#     "eve.karp",
-#     "gina.baronianmoore",
 #     "ishaan.agrawal",
-#     "joe.zucker",
-#     "kristy.briggs",
-#     "michael.mann",
-#     "mira.dytko",
-#     "priya.mehta",
-#     "rugmony.naganathan",
-#     "shyam.ramani",
 #     "smita.biswas",
-#     "srilatha.p",
-#     "tejashree.shiju",
+#     "aditi.gupta",
+#     "aanubbhaa.jhhaa",
 #     "vikram.bp"
-# ]
+# #     "aditi.kashikar"
+#                     ]
+
+
+list_of_recipients = [
+    "aanubbhaa.jhhaa",
+    "aditi.gupta",
+    "aditi.kashikar",
+    "arthur.hoang",
+    "eve.karp",
+    "gina.baronianmoore",
+    "ishaan.agrawal",
+    "kristy.briggs",
+    "michael.mann",
+    "mira.dytko",
+    "priya.mehta",
+    "rugmony.naganathan",
+    "shyam.ramani",
+    "smita.biswas",
+    "srilatha.p",
+    "tejashree.shiju",
+    "vikram.bp"
+]
 
 def get_due_issues(name):
 
@@ -76,16 +75,13 @@ list_of_pending_issues = []
 # smtp_server = "smtp.mailtrap.io"
 
 def send_email(name, list_of_due_issues, list_of_pending_issues):
-    # login = "ish91.agrawal@gmail.com"  # type you email here
-    # password = "ishaan1991"  # type your password here
-    # login = "ishaan.agrawal@automationanywhere.com"
+
     login = "prod-doc@automationanywhere.com"
-    # password = "I*aa2019"
     password = "AASJ@pd123#"
     # sender_email = "do_not_respond@automationanywhere.com"
     sender_email = login
-    # receiver_email = name + "@automationanywhere.com"
-    receiver_email = "ishaan.agrawal@automationanywhere.com"
+    receiver_email = name + "@automationanywhere.com"
+    # receiver_email = "ishaan.agrawal@automationanywhere.com"
     message = MIMEMultipart("alternative")
     message["Subject"] = "Your due ED tickets <do-not-reply> " + name
     message["From"] = sender_email
